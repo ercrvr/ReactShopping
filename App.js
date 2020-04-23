@@ -15,13 +15,14 @@ import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Colors from './layouts/Colors';
 
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 
 function tabNavigation() {
   return (
-    <Tab.Navigator screenOptions={({ navigation, route }) => ({
+    <Tab.Navigator  screenOptions={({ navigation, route }) => ({
       tabBarIcon: ({ focused, color, size }) => {
         let iconName;
 
@@ -49,11 +50,13 @@ function tabNavigation() {
         }
       },
     })}
+    
       tabBarOptions={{
         activeTintColor: Colors.tabIconDefault,
         inactiveTintColor: Colors.tintColor,
         tabStyle: styles.tabNavigator,
-        style: { backgroundColor: Colors.HeaderBgColorLight, paddingTop: 8 }
+        style: { backgroundColor: Colors.HeaderBgColorLight, paddingTop: 8}
+        
       }}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Promotions" component={PromotionsScreen} />
@@ -69,8 +72,8 @@ export default function App() {
     <ErrorBoundary>
       <NavigationContainer>
         <Stack.Navigator headerMode="screen" mode="card">
-          <Stack.Screen name="Home" options={{ title: 'React Native Shopping', headerStyle: { backgroundColor: Colors.HeaderBgColorLight } }} component={tabNavigation} />
-          <Stack.Screen name="Announcements" options={{ headerTintColor: Colors.textColorLight, headerStyle: { backgroundColor: Colors.HeaderBgColorLight } }} component={AnnouncementsScreen} />
+          <Stack.Screen name="Home" options={{ title: 'React Native Shopping', headerStyle: { backgroundColor: Colors.HeaderBgColorLight }, headerTitleAlign:'center', }}  component={tabNavigation} />
+          <Stack.Screen name="Announcements" options={{ headerTintColor: Colors.textColorLight, headerStyle: { backgroundColor: Colors.HeaderBgColorLight}, headerTitleAlign:'center' }} component={AnnouncementsScreen} />
         </Stack.Navigator>
       </NavigationContainer >
     </ErrorBoundary >

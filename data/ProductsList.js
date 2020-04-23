@@ -10,6 +10,7 @@ export default {
             bestseller: 1,
             specialpromo: 0,
             unit:'kg',
+            discount:'0',
         },
         {
             name: "Banana",
@@ -21,6 +22,7 @@ export default {
             bestseller: 1,
             specialpromo: 1,
             unit:'kg',
+            discount:'20',
         },
         {
             name: "Grapes",
@@ -32,6 +34,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'kg',
+            discount:'30',
         },
         {
             name: "Pineapple",
@@ -43,6 +46,7 @@ export default {
             bestseller: 1,
             specialpromo: 0,
             unit:'kg',
+            discount:'0',
         },
 
         {
@@ -55,6 +59,7 @@ export default {
             bestseller: 1,
             specialpromo: 0,
             unit:'tray',
+            discount:'0',
         },
         {
             name: "Asparagus",
@@ -66,6 +71,7 @@ export default {
             bestseller: 1,
             specialpromo: 0,
             unit:'kg',
+            discount:'0',
         },
         {
             name: "Raw legumes",
@@ -77,6 +83,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'kg',
+            discount:'15',
         },
         {
             name: "Tomato",
@@ -88,6 +95,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'kg',
+            discount:'60',
         },
         {
             name: "Yogurt",
@@ -99,6 +107,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'pc',
+            discount:'30',
         },
         {
             name: "Beef",
@@ -110,6 +119,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'kg',
+            discount:'50',
         },
         {
             name: "Mutton",
@@ -121,6 +131,7 @@ export default {
             bestseller: 1,
             specialpromo: 0,
             unit:'kg',
+            discount:'0',
         },
         {
             name: "Coca-Cola",
@@ -132,6 +143,8 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'pc',
+            discount:'80',
+            discount:'20',
         },
         {
             name: "Coca-Cola",
@@ -143,6 +156,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'pc',
+            discount:'20',
         },
         {
             name: "Fanta",
@@ -154,6 +168,7 @@ export default {
             bestseller: 0,
             specialpromo: 1,
             unit:'pc',
+            discount:'60',
         },
     ]
 }

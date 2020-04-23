@@ -17,17 +17,20 @@ export default function Products() {
     const filteredProduct = products.filter(createFilter(searchText, keys));
     const [width, setWidth] = useState(windowWidth)
     const [scrollType, setScrollType] = useState(false);
+    const [showTags, setShowTags] = useState(true);
 
     function searchIt(text) {
         setTextSearch(text);
         if (text === '') {
             setScrollType(false);
             setWidth(windowWidth);
+            setShowTags(false);
         } else {
             setScrollType(true);
             setWidth(windowWidth / 2);
+            setShowTags(true);
         }
-
+        console.log(showTags);
     }
 
     return (
@@ -38,7 +41,7 @@ export default function Products() {
                 {
                     filteredProduct.map((product, index) => {
                         return <View key={index} style={{ width: width }}>
-                            <Product {...filteredProduct[index]} />
+                            <Product {...filteredProduct[index]} showTags />
                         </View>
                     })
                 }

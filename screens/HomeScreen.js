@@ -9,7 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function HomeScreen() {
     const navigation = useNavigation();
     return (
-        <ScrollView>
+        <ScrollView style={{backgroundColor:'#fff'}}>
             <AnnouncementsSlider navigation={navigation} />
             <BestsellersSlider />
             <SpecialpromosSlider />
