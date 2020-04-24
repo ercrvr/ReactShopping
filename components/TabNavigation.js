@@ -2,6 +2,8 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
+
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from '../screens/HomeScreen';
@@ -16,7 +18,7 @@ export default function TabNavigation() {
       <Tab.Navigator  screenOptions={({ navigation, route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-  
+
           if (route.name === 'Home') {
             iconName = focused
               ? 'home'
@@ -32,7 +34,7 @@ export default function TabNavigation() {
           } else if (route.name === 'Filler') {
             iconName = focused ? 'tag' : 'tag';
           }
-  
+          console.log(iconName);
           // You can return any component that you like here!
           if (route.name === 'Products') {
             return <Entypo name={iconName} size={size} color={color} />;

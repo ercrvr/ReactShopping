@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { StyleSheet, Text, ScrollView, View, Dimensions } from 'react-native';
 
 import Product from '../components/Product';
@@ -36,7 +37,7 @@ export default function Products() {
     return (
 
         <View>
-            <Searchbar onChangeText={text => searchIt(text)} value={searchText} placeholder="Search for a product or a category" style={styles.searchInput} />
+            <Searchbar onChangeText={text => searchIt(text)} value={searchText}  placeholder="Search for a product or a category" style={styles.searchInput} />
             <ScrollView horizontal={scrollType} showsHorizontalScrollIndicator={false} scrollEventThrottle={200} >
                 {
                     filteredProduct.map((product, index) => {

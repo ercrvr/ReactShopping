@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View, StatusBar,Button} from 'react-native';
 import { useState, useEffect } from 'react';
-import { getAccessToken, getUser, clearTokens } from '@okta/okta-react-native';
+
 import Spinner from 'react-native-loading-spinner-overlay';
 import Error from '../components/Error';
 import { useNavigation } from '@react-navigation/native';
@@ -12,40 +12,8 @@ export default function ProfileScreen(){
     const [user, setUser] = useState(null);
     const [progress, setProgress] = useState('');
     const [error, setError] = useState('');
-    useEffect(()=>{
-        navigation.setOptions({
-            headerLeft: ()=> <Text onPress={()=>{logout}} style={styles.logoutButton}>Logout</Text>
-        })
-        setProgress(true);
-        const getIt = async()=>{
-            await getUser().then(user=>{
-                setProgress(false);
-                setUser(user);
-            }).catch(e=>{
-                setProgress(false);
-                setError(e.message);
-            })
-        }
-    function getaccessToken(){
-        setProgress(false);
-        getAccessToken().then(token=>{
-            setProgress(false);
-            setAccessToken(token.accessToken)
-        }).catch(e=>{
-            setProgress(false);
-            setError(e.message);
-        })
-    }
 
-    function logout(){
-        clearTokens().then(()=>{
-            navigation.navigate('Login');
-        }).catch(e=>{
-            setProgress(false);
-            setError(e.message);
-        })
-    }
-    });
+   
     return(
         <>
         <StatusBar barStyle="dark-content" />

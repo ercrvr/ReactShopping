@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {SafeAreaView,Button,StyleSheet,Text,View,StatusBar,TextInput,} from 'react-native';
-import { signIn } from '@okta/okta-react-native';
+
 import Spinner from 'react-native-loading-spinner-overlay';
 import Error from '../components/Error';
 import { useNavigation } from '@react-navigation/native';
@@ -13,21 +13,6 @@ export default function LoginScreen() {
     const [password, setPassword] = useState('');
     const [progress, setProgress] = useState(false);
     const [error, setError] = useState('');
-
-      function login(){
-         signIn(userName, password).then(token=>{
-           console.log(token);
-          setProgress(false);
-          setUserName('');
-          setPassword('');
-          setError('');
-          navigation.navigate('Profile');
-        }).catch (e=>{
-          setError(e.message);
-        })
-        
-      }
-
   
     return (
         <>
@@ -57,7 +42,7 @@ export default function LoginScreen() {
               <View style={{marginTop: 40, height: 40}}>
                 <Button
                   testID="loginButton"
-                  onPress={()=>{login()}}
+                  onPress={()=>{navigation.navigate('Home')}}
                   title="Login"
                 />
               </View>
