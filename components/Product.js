@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Button, Divider } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
-import { sub } from 'react-native-reanimated';
 
 
 
