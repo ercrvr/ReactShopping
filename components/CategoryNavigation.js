@@ -21,7 +21,7 @@ export default function CategoryNavigation() {
                 categories.map((cat, index) => {
                     const pList = products.filter(prod => prod.category === cat);
                     navigation.setParams({category:cat});
-                    return <Tab.Screen name={cat} component={() => { return <Product products={pList} /> }} />
+                    return <Tab.Screen name={cat} component={() => { return <Product produuts={pList} /> }} />
                 })
             }
         </Tab.Navigator>

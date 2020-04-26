@@ -78,7 +78,7 @@ export default function Product(products) {
 
         return (
             
-                <View></View>
+                <View><Text>Test</Text></View>
             
 
         )
