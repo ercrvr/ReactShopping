@@ -2,13 +2,11 @@ import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import Entypo from 'react-native-vector-icons/Entypo';
-
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 import HomeScreen from '../screens/HomeScreen';
 import PromotionsScreen from '../screens/Promotions';
 import ProductsScreen from '../screens/Products';
+import ShoppingCart from '../screens/ShoppingCart';
 import Colors from '../layouts/Colors';
 
 const Tab = createBottomTabNavigator();
@@ -31,10 +29,10 @@ export default function TabNavigation() {
             iconName = focused ? 'shop' : 'shop';
           } else if (route.name === 'Others') {
             iconName = focused ? 'tag' : 'tag';
-          } else if (route.name === 'Filler') {
-            iconName = focused ? 'tag' : 'tag';
+          } else if (route.name === 'Cart') {
+            iconName = focused ? 'shopping-cart' : 'shopping-cart';
           }
-          console.log(iconName);
+          
           // You can return any component that you like here!
           if (route.name === 'Products') {
             return <Entypo name={iconName} size={size} color={color} />;
@@ -54,7 +52,7 @@ export default function TabNavigation() {
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Promotions" component={PromotionsScreen} />
         <Tab.Screen name="Products" component={ProductsScreen} />
-        <Tab.Screen name="Filler" component={ProductsScreen} />
+        <Tab.Screen name="Cart" component={ShoppingCart} />
         <Tab.Screen name="Others" component={ProductsScreen} />
       </Tab.Navigator>
     );

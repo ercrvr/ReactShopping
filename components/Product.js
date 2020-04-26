@@ -10,7 +10,6 @@ import { useNavigation } from '@react-navigation/native';
 export default function Product(products, showtags) {
     const navigation = useNavigation();
     let featuredtitle, subtitle;
-   
         if(products.specialpromo === 1){
             featuredtitle = `${products.discount}% OFF`;
             subtitle = `Save AED ${(products.price * (products.discount/100)).toFixed(2)}`; 

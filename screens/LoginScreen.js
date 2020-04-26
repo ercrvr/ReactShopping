@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {SafeAreaView,Button,StyleSheet,Text,View,StatusBar,TextInput,} from 'react-native';
+import {SafeAreaView,Button,StyleSheet,Text,View,StatusBar,TextInput, BackHandler} from 'react-native';
 
 import Spinner from 'react-native-loading-spinner-overlay';
-import Error from '../components/Error';
+
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -12,8 +12,7 @@ export default function LoginScreen() {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const [progress, setProgress] = useState(false);
-    const [error, setError] = useState('');
-  
+    BackHandler.addEventListener('hardwareBackPress', function() {return true});
     return (
         <>
         <StatusBar barStyle="dark-content" />
@@ -24,7 +23,7 @@ export default function LoginScreen() {
             textStyle={styles.spinnerTextStyle}
           />
           <Text style={styles.title}>Native Sign-In</Text>
-          <Error error={error} />
+        
           <View style={styles.buttonContainer}>
             <View style={styles.button}>
               <TextInput
