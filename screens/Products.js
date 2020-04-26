@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import { StyleSheet, Text, ScrollView, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Dimensions, SectionList, Item } from 'react-native';
 import Product from '../components/Product';
 import { Searchbar } from 'react-native-paper';
 import { createFilter } from 'react-native-search-filter';
 import ProductsList from '../data/ProductsList';
 
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 
 export default function Products() {
 
@@ -15,15 +15,10 @@ export default function Products() {
     const keys = ['category', 'name'];
     const products = ProductsList.products;
     const filteredProduct = products.filter(createFilter(searchText, keys));
-    let categories = products.map(prod => prod.category);
-    categories = new Set(categories);
-
+    
+    
     function searchIt(text) {
         setTextSearch(text);
-    }
-
-    function createMyTabs(arr){
-        return 
     }
 
     return (
@@ -31,8 +26,12 @@ export default function Products() {
         <View>
             <Searchbar onChangeText={text => searchIt(text)} value={searchText} placeholder="Search for a product or a category" style={styles.searchInput} />
             <ScrollView contentContainerStyle={styles.grid}>
+            
+
                 {
+                    
                     filteredProduct.map((product, index) => {
+                        
                         return <View key={index} style={{ width: windowWidth/2 }}>
                             <Product {...filteredProduct[index]} />
                         </View>

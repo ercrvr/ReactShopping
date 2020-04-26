@@ -6,12 +6,12 @@ import LoginNavigation from '../components/LoginNavigation';
 
 
 
-export default function AppContainer(){
-    return(
+export default function AppContainer() {
+    return (
         <ErrorBoundary>
-        <NavigationContainer>
-            <LoginNavigation />
-        </NavigationContainer >
+            <NavigationContainer>
+                <LoginNavigation />
+            </NavigationContainer >
         </ErrorBoundary >
     );
 }
