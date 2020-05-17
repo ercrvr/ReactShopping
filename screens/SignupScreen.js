@@ -4,43 +4,46 @@ import {StyleSheet,Text,View, TouchableOpacity,TextInput, BackHandler} from 'rea
 import { Button } from 'react-native-elements';
 import Colors from '../layouts/Colors';
 import { useNavigation } from '@react-navigation/native';
-
-
-import { updateEmail, updatePassword, login } from '../actions/user'
+import { updateEmail, updatePassword, signup } from '../actions/user'
 import { useSelector, useDispatch } from 'react-redux';
 
-
-export default function LoginScreen() {
-
+export default function SignupScreen() {
     const navigation = useNavigation();
+    const [name, setName] = useState('');
     const dispatch = useDispatch();
     const email = useSelector(state=>state.user.email);
     const password = useSelector(state=>state.user.password);
-    BackHandler.addEventListener('hardwareBackPress', function() {return true});
-    const handleLogin=()=>{
-      dispatch(login());
-    }
+    const handleSignup=()=>{
+        dispatch(signup());
+        
+      }
     return (
       <View style={styles.container}>
-      <TextInput
-          style={styles.inputBox}
-          value={email}
-          onChangeText={email =>dispatch(updateEmail(email))}
-          placeholder='Email'
-          autoCapitalize='none'
-      />
-      <TextInput
-          style={styles.inputBox}
-          value={password}
-          onChangeText={password => dispatch(updatePassword(password))}
-          placeholder='Password'
-          secureTextEntry={true}
-      />
-      <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText} onPress={()=>handleLogin()}>Login</Text>
-      </TouchableOpacity>
-      <Button type="clear" onPress={()=>navigation.navigate('Signup')} title="Don't have an account yet? Sign up" />
-  </View>
+                <TextInput
+                    style={styles.inputBox}
+                    value={name}
+                    onChangeText={name => setName(name)}
+                    placeholder='Full Name'
+                />
+                <TextInput
+                    style={styles.inputBox}
+                    value={email}
+                    onChangeText={email => dispatch(updateEmail(email))}
+                    placeholder='Email'
+                    autoCapitalize='none'
+                />
+                <TextInput
+                    style={styles.inputBox}
+                    value={password}
+                    onChangeText={password => dispatch(updatePassword(password))}
+                    placeholder='Password'
+                    secureTextEntry={true}
+                />
+                <TouchableOpacity style={styles.button} onPress={()=>handleSignup()}>
+                    <Text style={styles.buttonText}>Signup</Text>
+                </TouchableOpacity>
+                <Button type="clear" onPress={()=>navigation.goBack()} title="Go back" />
+            </View>
     );
 }
 const styles = StyleSheet.create({

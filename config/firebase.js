@@ -7,6 +7,10 @@ import {
     STORAGE_BUCKET
 } from 'react-native-dotenv'
 
+import 'firebase/firestore';
+
+
+
 const config = {
     apiKey: API_KEY,
     authDomain: AUTH_DOMAIN,
@@ -16,5 +20,8 @@ const config = {
   };
 
 const Firebase = firebase.initializeApp(config);
+
+export const db = firebase.firestore()
+
 
 export default Firebase
