@@ -3,10 +3,11 @@ import { View, ActivityIndicator, StyleSheet, Text, Image, BackHandler } from 'r
 import { useNavigation } from '@react-navigation/native';
 import Colors from '../layouts/Colors';
 
+
 export default function LoadingScreen() {
 
     const navigation = useNavigation();
-    const [isLogged, setIsLogged] = useState(true);
+    const [isLogged, setIsLogged] = useState(false);
     const [text, setText] = useState('');
 
     
